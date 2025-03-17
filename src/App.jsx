@@ -10,7 +10,7 @@ function App() {
   const fetchapi=async()=>{
     
     const response=await axios.get(	"https://api.adviceslip.com/advice")
-    setrendom(response.data.slip.advice)
+     setrendom(response.data.slip.advice)
   }
   useEffect(()=>{
  fetchapi()
@@ -18,14 +18,19 @@ function App() {
  
 
   return (
+    <div>
+       <div className='nav'>
+     <h1>GET GOOD ADVICE WITH ONE CLICK</h1>
     
+    </div>
     <div className='app' style={{ backgroundImage: `url(${city})` }}>
       
-    <div className='card'>
+      <div className='card'>
     <div className='heading'>
       {rendom}
       </div>
     <button className='button' onClick={() => window.location.reload()}>Give me Advice</button>
+    </div>
     </div>
     </div>
   )
